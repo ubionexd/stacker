@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.0
       with:
         name: stacker-windows
-        path: target/release/stacker
+        path: target/release/stacker.exe
 
   build-mac:
 
