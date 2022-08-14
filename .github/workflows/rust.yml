@@ -23,8 +23,8 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: stacker
-        path: target/release
+        name: stacker-linux
+        path: target/release/stacker
     
   build-windows:
 
@@ -39,8 +39,8 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: stacker
-        path: target/release
+        name: stacker-windows
+        path: target/release/stacker
 
   build-mac:
 
@@ -55,5 +55,5 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: stacker
-        path: target/release
+        name: stacker-mac
+        path: target/release/stacker
