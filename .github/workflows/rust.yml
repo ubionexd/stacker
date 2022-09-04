@@ -64,10 +64,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+    - name: Setup
+      run: rustup target add aarch64-apple-darwin \ SDKROOT=$(xcrun -sdk macosx11.1 --show-sdk-path) \ MACOSX_DEPLOYMENT_TARGET=$(xcrun -sdk macosx11.1 --show-sdk-platform-version)
     - name: Test
       run: cargo test --verbose
     - name: Build
-      run: cargo install --target aarch64-apple-darwin && cargo run --release
+      run: cargo build --target aarch64-apple-darwin --release
     - name: Upload
       uses: actions/upload-artifact@v3.1.0
       with:
