@@ -57,3 +57,19 @@ jobs:
       with:
         name: stacker-mac
         path: target/release/stacker
+
+  build-mac-aarch64:
+    
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test
+      run: cargo test --verbose
+    - name: Build
+      run: cargo install --target aarch64-apple-darwin && cargo run --release
+    - name: Upload
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: stacker-mac-arm
+        path: target/release/stacker
