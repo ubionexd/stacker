@@ -58,7 +58,7 @@ jobs:
         name: stacker-mac
         path: target/release/stacker
 
-  build-mac-aarch64:
+  build-mac-arm:
     
     runs-on: macos-latest
     
@@ -74,4 +74,4 @@ jobs:
       uses: actions/upload-artifact@v3.1.0
       with:
         name: stacker-mac-arm
-        path: target
+        path: target/aarch64-apple-darwin/release/stacker
